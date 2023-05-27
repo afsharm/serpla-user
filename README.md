@@ -9,4 +9,5 @@ Based on `nest.js`
 ```bash
 $ yarn install
 $ yarn start
+# default port: 3000
 ```
