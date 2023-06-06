@@ -27,4 +27,8 @@ export class AppService {
 
     return this.repository.save(user);
   }
+
+  public getUser(id: string): Promise<User> {
+    return this.repository.findOne({ where: { id: id } });
+  }
 }

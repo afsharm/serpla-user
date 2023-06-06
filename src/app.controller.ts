@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { User } from './user.entity';
 import { CreateUserDto } from './user.dto';
@@ -13,8 +13,13 @@ export class AppController {
   }
 
   @Get('users')
-  public getUser(): Promise<User[]> {
+  public getUsers(): Promise<User[]> {
     return this.appService.getUsers();
+  }
+
+  @Get(':id')
+  public getUser(@Param('id') id: string): Promise<User> {
+    return this.appService.getUser(id);
   }
 
   @Post()
