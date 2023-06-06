@@ -18,3 +18,11 @@ $ yarn start
 PostgreSQL and PgAdmin docker compose
 https://github.com/khezen/compose-postgres
 
+
+
+NestJS and PostgreSQL
+https://betterprogramming.pub/nest-js-project-with-typeorm-and-postgres-ce6b5afac3be
+
+
+Useful resources for NestJS
+https://github.com/nestjs/awesome-nestjs
