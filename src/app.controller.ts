@@ -23,7 +23,9 @@ export class AppController {
   }
 
   @Post('users')
-  public createUser(@Body() body: CreateUserDto): Promise<User> {
-    return this.appService.createUser(body);
+  public async createUser(@Body() body: CreateUserDto): Promise<string> {
+    const result = await this.appService.createUser(body);
+    const uri = `/users/${result.id}`;
+    return uri;
   }
 }
