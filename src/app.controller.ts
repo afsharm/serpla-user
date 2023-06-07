@@ -17,12 +17,12 @@ export class AppController {
     return this.appService.getUsers();
   }
 
-  @Get(':id')
+  @Get('users/:id')
   public getUser(@Param('id') id: string): Promise<User> {
     return this.appService.getUser(id);
   }
 
-  @Post()
+  @Post('users')
   public createUser(@Body() body: CreateUserDto): Promise<User> {
     return this.appService.createUser(body);
   }
