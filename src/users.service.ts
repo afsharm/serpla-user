@@ -5,7 +5,7 @@ import { User } from './user.entity';
 import { CreateUserDto } from './user.dto';
 
 @Injectable()
-export class AppService {
+export class UsersService {
   @InjectRepository(User)
   private readonly repository: Repository<User>;
 

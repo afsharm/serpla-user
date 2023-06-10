@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { UsersController } from './users.controller';
-import { AppService } from './users.service';
+import { UsersService } from './users.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { getEnvPath } from './common/env.helper';
@@ -16,6 +16,6 @@ const envFilePath: string = getEnvPath(`./src/`);
     TypeOrmModule.forFeature([User]),
   ],
   controllers: [UsersController],
-  providers: [AppService],
+  providers: [UsersService],
 })
 export class AppModule {}
