@@ -18,4 +18,4 @@ const envFilePath: string = getEnvPath(`./src/`);
   controllers: [UsersController],
   providers: [UsersService],
 })
-export class AppModule {}
+export class UsersModule {}
