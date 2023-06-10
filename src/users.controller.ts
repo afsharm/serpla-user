@@ -3,26 +3,26 @@ import { AppService } from './users.service';
 import { User } from './user.entity';
 import { CreateUserDto } from './user.dto';
 
-@Controller()
+@Controller('users')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get('hello')
   getHello(): string {
     return this.appService.getHello();
   }
 
-  @Get('users')
+  @Get()
   public getUsers(): Promise<User[]> {
     return this.appService.getUsers();
   }
 
-  @Get('users/:id')
+  @Get(':id')
   public getUser(@Param('id') id: string): Promise<User> {
     return this.appService.getUser(id);
   }
 
-  @Post('users')
+  @Post()
   public async createUser(@Body() body: CreateUserDto): Promise<string> {
     const result = await this.appService.createUser(body);
     const uri = `/users/${result.id}`;
