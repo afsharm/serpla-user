@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './users.controller';
+import { UsersController } from './users.controller';
 import { AppService } from './users.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
@@ -15,7 +15,7 @@ const envFilePath: string = getEnvPath(`./src/`);
     TypeOrmModule.forRootAsync({ useClass: TypeOrmConfigService }),
     TypeOrmModule.forFeature([User]),
   ],
-  controllers: [AppController],
+  controllers: [UsersController],
   providers: [AppService],
 })
 export class AppModule {}

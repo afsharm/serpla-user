@@ -4,7 +4,7 @@ import { User } from './user.entity';
 import { CreateUserDto } from './user.dto';
 
 @Controller('users')
-export class AppController {
+export class UsersController {
   constructor(private readonly appService: AppService) {}
 
   @Get('hello')
